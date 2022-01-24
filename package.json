@@ -1,0 +1,19 @@
+{
+  "name": "react-native-reanimated-bounce",
+  "version": "1.0.0",
+  "description": "Animate a react-native component with gravity and bouncing effect.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangruoqi/react-native-reanimated-bounce.git"
+  },
+  "author": "Ruoqi Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huangruoqi/react-native-reanimated-bounce/issues"
+  },
+  "homepage": "https://github.com/huangruoqi/react-native-reanimated-bounce#readme"
+}
