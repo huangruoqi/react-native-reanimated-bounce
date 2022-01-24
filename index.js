@@ -4,7 +4,32 @@ import Animated,{
 	useSharedValue,
 	useAnimatedStyle,
 } from 'react-native-reanimated';
-export default function BounceView({
+
+export default class A extends React.Component {
+	render() {
+		const {
+			component,
+			animate,
+			gravity,
+			ground,
+			up_velocity,
+			damping,
+			bounce_cycle,
+		} = this.props;
+		return (
+			<BounceView
+			component={component}
+			animate={animate}
+			gravity={gravity}
+			ground={ground}
+			up_velocity={up_velocity}
+			damping={damping}
+			bounce_cycle={bounce_cycle}
+			></BounceView>
+		)
+	}
+}
+function BounceView({
   component,
   animate,
   gravity = 1600,
@@ -73,4 +98,3 @@ export default function BounceView({
   }
   return <Animated.View style={rStyle}>{component}</Animated.View>;
 }
-
