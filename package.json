@@ -1,6 +1,6 @@
 {
   "name": "react-native-reanimated-bounce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Animate a react-native component with gravity and bouncing effect.",
   "main": "index.js",
   "scripts": {
