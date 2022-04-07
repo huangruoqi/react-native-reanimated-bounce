@@ -10,6 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/huangruoqi/react-native-reanimated-bounce.git"
   },
+  "keywords": [
+    "React Native",
+    "React Native Reanimated",
+    "Bounce View",
+    "Bouncing",
+    "Gravity",
+    "Vertical Bounce Translation"
+  ],
   "author": "Ruoqi Huang",
   "license": "ISC",
   "bugs": {
