@@ -43,7 +43,6 @@ function BounceView({
             startAnimation();
         };
     }, []);
-    const x_progress = useSharedValue(0);
     const t_progress = useSharedValue(0);
     const rStyle = useAnimatedStyle(() => {
         const h = ground;
@@ -54,7 +53,7 @@ function BounceView({
         const t0 = Math.sqrt((h - k) / a) + c;
         if (t_progress.value <= t0) {
             return {
-                transform: [{ translateX: x_progress.value }, { translateY: y_pos }],
+                transform: [{ translateY: y_pos }],
             };
         }
         const vf = 2 * a * (t0 - c);
@@ -69,31 +68,22 @@ function BounceView({
         for (let i = 1; i < bounce_cycle + 1; i++) {
             if (t_progress.value <= time_intervals[i]) {
                 const _k = -a * ((time_intervals[i] - time_intervals[i - 1]) / 2) ** 2;
-                y_pos =
-                    a *
-                    (t_progress.value -
-                        time_intervals[i - 1] -
-                        (time_intervals[i] - time_intervals[i - 1]) / 2) **
-                    2 +
-                    _k +
-                    h;
+                y_pos = a * (t_progress.value - time_intervals[i - 1] - (time_intervals[i] - time_intervals[i - 1]) / 2) ** 2 + _k + h;
                 hasInterval = true;
                 break;
             }
         }
         if (hasInterval) {
             return {
-                transform: [{ translateX: x_progress.value }, { translateY: y_pos }],
+                transform: [{ translateY: y_pos }],
             };
         }
         return {
-            transform: [{ translateX: x_progress.value }, { translateY: h }],
+            transform: [{ translateY: h }],
         };
     });
     function startAnimation() {
         t_progress.value = 0;
-        x_progress.value = 0;
-        x_progress.value = withTiming(30, { duration: 2000 });
         t_progress.value = withTiming(10, { duration: 5000 });
     }
     return <Animated.View style={rStyle}>{component}</Animated.View>;
